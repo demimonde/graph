@@ -32,3 +32,35 @@ Makes the call to the get path that can either start or not start with `/`. The 
 Posts data to the edge.
 
 %~%
+
+```## getUrl
+[
+  ["url", "string"],
+  ["params?", "Object"]
+]
+```
+
+Stringifies the params and returns the URL for GET request.
+
+%~%
+
+```## exchange
+[
+  ["params", "{ client_id, redirect_uri, client_secret, code } "]
+]
+```
+
+Exchanges the short-lived token for a long-lived token.
+
+%~%
+
+
+```## facebookDialogUrl
+[
+  ["params", "{ client_id, redirect_uri, state, scope } "]
+]
+```
+
+Returns the Oauth URL to sign in into Facebook and allow the app permissions.
+
+%~%

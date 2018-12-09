@@ -14,6 +14,9 @@ yarn add -E @demimonde/graph
 - [API](#api)
 - [`graphGet(path: string, token: string, params: Object, straight: string)`](#graphgetpath-stringtoken-stringparams-objectstraight-string-void)
 - [`graphPost(path: string, token: string, params: Object)`](#graphpostpath-stringtoken-stringparams-object-void)
+- [`getUrl(url: string, params?: Object)`](#geturlurl-stringparams-object-void)
+- [`exchange(params: { client_id, redirect_uri, client_secret, code } )`](#exchangeparams--client_id-redirect_uri-client_secret-code---void)
+- [`facebookDialogUrl(params: { client_id, redirect_uri, state, scope } )`](#facebookdialogurlparams--client_id-redirect_uri-state-scope---void)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -39,6 +42,25 @@ Makes the call to the get path that can either start or not start with `/`. The 
 Posts data to the edge.
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
+
+## `getUrl(`<br/>&nbsp;&nbsp;`url: string,`<br/>&nbsp;&nbsp;`params?: Object,`<br/>`): void`
+
+Stringifies the params and returns the URL for GET request.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/4.svg?sanitize=true"></a></p>
+
+## `exchange(`<br/>&nbsp;&nbsp;`params: { client_id, redirect_uri, client_secret, code } ,`<br/>`): void`
+
+Exchanges the short-lived token for a long-lived token.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/5.svg?sanitize=true"></a></p>
+
+
+## `facebookDialogUrl(`<br/>&nbsp;&nbsp;`params: { client_id, redirect_uri, state, scope } ,`<br/>`): void`
+
+Returns the Oauth URL to sign in into Facebook and allow the app permissions.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/6.svg?sanitize=true"></a></p>
 
 ## Copyright
 
