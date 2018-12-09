@@ -21,7 +21,7 @@ Makes the call to the get path that can either start or not start with `/`. The 
 
 %~%
 
-```## graphPost
+```## async graphPost => *
 [
   ["path", "string"],
   ["token", "string"],
@@ -33,7 +33,7 @@ Posts data to the edge.
 
 %~%
 
-```## getUrl
+```## async getUrl => *
 [
   ["url", "string"],
   ["params?", "Object"]
@@ -44,7 +44,7 @@ Stringifies the params and returns the URL for GET request.
 
 %~%
 
-```## exchange
+```## async exchange => string
 [
   ["params", "{ client_id, redirect_uri, client_secret, code } "]
 ]
@@ -55,7 +55,7 @@ Exchanges the short-lived token for a long-lived token.
 %~%
 
 
-```## facebookDialogUrl
+```## facebookDialogUrl => string
 [
   ["params", "{ client_id, redirect_uri, state, scope } "]
 ]
