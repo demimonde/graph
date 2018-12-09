@@ -60,6 +60,22 @@ Exchanges the short-lived token for a long-lived token.
 
 Returns the Oauth URL to sign in into Facebook and allow the app permissions.
 
+```js
+import { facebookDialogUrl } from '@demimonde/graph'
+
+const url = facebookDialogUrl({
+  client_id: '4hkajshd6f7t4ff',
+  redirect_uri: 'http://localhost:4350',
+  scope: 'manage_pages',
+  state: Math.floor(Math.random() * 10000),
+})
+
+console.log(url)
+```
+```
+https://www.facebook.com/v3.2/dialog/oauth?client_id=4hkajshd6f7t4ff&redirect_uri=http%3A%2F%2Flocalhost%3A4350&state=1318&scope=manage_pages
+```
+
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/6.svg?sanitize=true"></a></p>
 
 ## Copyright

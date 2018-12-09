@@ -63,4 +63,7 @@ Exchanges the short-lived token for a long-lived token.
 
 Returns the Oauth URL to sign in into Facebook and allow the app permissions.
 
+%EXAMPLE: example/facebook.js, ../src => @demimonde/graph%
+%FORK example example/facebook%
+
 %~%
