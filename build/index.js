@@ -1,30 +1,36 @@
-const { debuglog } = require('util');
+let rqt = require('rqt'); if (rqt && rqt.__esModule) rqt = rqt.default;
 
-const LOG = debuglog('@demimonde/graph')
+const getData = (access_token, data) => ({
+  access_token,
+  ...data,
+})
 
-/**
- * The Facebook Graph Methods To Get And Post Data Using Access Tokens.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
- */
-               async function graph(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@demimonde/graph called with %s', text)
-  return text
+       const graphPost = async (path, token, params = {}) => {
+  if (!token) throw new Error('No token is given')
+  const data = getData(token, params)
+  const res = await rqt(`https://graph.facebook.com/${path}`, {
+    data,
+    method: 'POST',
+  })
+  const { data: d, error } = JSON.parse(res)
+  if (error) throw res
+  return d
 }
 
-/* documentary types/index.xml */
-/**
- * @typedef {Object} Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
- */
+export const graphGet = async (path, token, params = {}, straight) => {
+  if (!token) throw new Error('No token is given')
+  const data = getData(token, params)
+  const p = path.startsWith('/') ? path : `/${path}`
+  const url = getUrl(`https://graph.facebook.com${p}`, data)
+  const res = await rqt(url)
+  const r = JSON.parse(res)
+  if (straight) return r
+  const { data: d, error } = r
+  if (error) throw new Error(res)
+  if (!d) throw new Error('no data')
+  return d
+}
 
 
-module.exports = graph
+module.exports.graphPost = graphPost
 //# sourceMappingURL=index.js.map

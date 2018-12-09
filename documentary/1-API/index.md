@@ -8,18 +8,27 @@ import graph from '@demimonde/graph'
 
 %~%
 
-```## graph
+```## graphGet
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["path", "string"],
+  ["token", "string"],
+  ["params", "Object"],
+  ["straight", "string"]
 ]
 ```
 
-Call this function to get the result you want.
+Makes the call to the get path that can either start or not start with `/`. The params will be converted to string using `querystring.stringify` in which the `access_token` will be embedded.
 
-%TYPEDEF types/index.xml%
+%~%
 
-%EXAMPLE: example/example.js, ../src => @demimonde/graph%
-%FORK example example/example%
+```## graphPost
+[
+  ["path", "string"],
+  ["token", "string"],
+  ["params", "Object"]
+]
+```
+
+Posts data to the edge.
 
 %~%

@@ -1,6 +1,6 @@
 # @demimonde/graph
 
-[![npm version](https://badge.fury.io/js/@demimonde/graph.svg)](https://npmjs.org/package/@demimonde/graph)
+[![npm version](https://badge.fury.io/js/%40demimonde%2Fgraph.svg)](https://npmjs.org/package/@demimonde/graph)
 
 `@demimonde/graph` is The Facebook Graph Methods To Get And Post Data Using Access Tokens.
 
@@ -12,8 +12,8 @@ yarn add -E @demimonde/graph
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`graph(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
-  * [`Config`](#type-config)
+- [`graphGet(path: string, token: string, params: Object, straight: string)`](#graphgetpath-stringtoken-stringparams-objectstraight-string-void)
+- [`graphPost(path: string, token: string, params: Object)`](#graphpostpath-stringtoken-stringparams-object-void)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -28,33 +28,17 @@ import graph from '@demimonde/graph'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `graph(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+## `graphGet(`<br/>&nbsp;&nbsp;`path: string,`<br/>&nbsp;&nbsp;`token: string,`<br/>&nbsp;&nbsp;`params: Object,`<br/>&nbsp;&nbsp;`straight: string,`<br/>`): void`
 
-Call this function to get the result you want.
-
-__<a name="type-config">`Config`</a>__: Options for the program.
-
-|   Name    |   Type    |    Description    | Default |
-| --------- | --------- | ----------------- | ------- |
-| shouldRun | _boolean_ | A boolean option. | `true`  |
-| __text*__ | _string_  | A text to return. | -       |
-
-```js
-/* yarn example/ */
-import graph from '@demimonde/graph'
-
-(async () => {
-  const res = await graph({
-    text: 'example',
-  })
-  console.log(res)
-})()
-```
-```
-example
-```
+Makes the call to the get path that can either start or not start with `/`. The params will be converted to string using `querystring.stringify` in which the `access_token` will be embedded.
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
+
+## `graphPost(`<br/>&nbsp;&nbsp;`path: string,`<br/>&nbsp;&nbsp;`token: string,`<br/>&nbsp;&nbsp;`params: Object,`<br/>`): void`
+
+Posts data to the edge.
+
+<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/3.svg?sanitize=true"></a></p>
 
 ## Copyright
 
