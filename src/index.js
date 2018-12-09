@@ -8,7 +8,7 @@ const getData = (data, access_token) => ({
 
 const getGraphPath = (path) => {
   const p = path.startsWith('/') ? path : `/${path}`
-  return 'https://graph.facebook.com/' + p
+  return 'https://graph.facebook.com' + p
 }
 
 export const graphPost = async (path, token, params = {}) => {

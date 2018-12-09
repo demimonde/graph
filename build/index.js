@@ -8,7 +8,7 @@ const getData = (data, access_token) => ({
 
 const getGraphPath = (path) => {
   const p = path.startsWith('/') ? path : `/${path}`
-  return 'https://graph.facebook.com/' + p
+  return 'https://graph.facebook.com' + p
 }
 
        const graphPost = async (path, token, params = {}) => {
@@ -49,10 +49,13 @@ const getGraphPath = (path) => {
 }) => {
   const url = getGraphPath('/oauth/access_token')
   const res = await jqt(url, {
-    client_id,
-    redirect_uri,
-    client_secret,
-    code,
+    method: 'POST',
+    data: {
+      client_id,
+      redirect_uri,
+      client_secret,
+      code,
+    },
   })
   const { access_token } = res
   if (!access_token) {
