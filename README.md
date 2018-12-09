@@ -73,7 +73,7 @@ const url = facebookDialogUrl({
 console.log(url)
 ```
 ```
-https://www.facebook.com/v3.2/dialog/oauth?client_id=4hkajshd6f7t4ff&redirect_uri=http%3A%2F%2Flocalhost%3A4350&state=1318&scope=manage_pages
+https://www.facebook.com/dialog/oauth?client_id=4hkajshd6f7t4ff&redirect_uri=http%3A%2F%2Flocalhost%3A4350&state=5242&scope=manage_pages
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/6.svg?sanitize=true"></a></p>

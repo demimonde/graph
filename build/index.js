@@ -32,7 +32,7 @@ const getGraphPath = (path) => {
        const facebookDialogUrl = ({
   client_id, redirect_uri, state, scope,
 }) => {
-  const u = getUrl('https://www.facebook.com/v3.2/dialog/oauth', {
+  const u = getUrl('https://www.facebook.com/dialog/oauth', {
     client_id,
     redirect_uri,
     state,
