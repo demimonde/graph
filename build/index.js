@@ -49,18 +49,15 @@ const getGraphPath = (path) => {
 }) => {
   const url = getGraphPath('/oauth/access_token')
   const res = await jqt(url, {
-    method: 'POST',
-    data: {
-      client_id,
-      redirect_uri,
-      client_secret,
-      code,
-    },
+    client_id,
+    redirect_uri,
+    client_secret,
+    code,
   })
   const { access_token } = res
   if (!access_token) {
-    const er = new Error('No access token')
-    er.response = res
+    const er = new Error('No access token: \n' + JSON.stringify(res, null, 2))
+    throw er
   }
   return access_token
 }
